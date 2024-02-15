@@ -38,7 +38,7 @@ def get_current_location():
         return None
 
 # Replace "ws://example.com/socket" with your WebSocket server URI
-websocket_uri = "ws://127.0.0.1:8001/ws/fleettracking/first/"
+websocket_uri = "wss://logimasterssilicon.onrender.com/ws/fleettracking/first/"
 
 # Create and set up a new event loop
 async def main():
