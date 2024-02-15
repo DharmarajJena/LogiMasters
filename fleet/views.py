@@ -36,11 +36,11 @@ class SendNotifications(viewsets.ModelViewSet):
         data = request.data 
         serializer = self.serializer_class(data=data)
         if serializer.is_valid():
-            license_no = data['license_no']
-            fleets = Fleets.objects.filter(license_no=license_no).first()
+            registration_no = data['registration_no']
+            fleets = Fleets.objects.filter(registration_no=registration_no).first()
             if fleets:
                 serializer.save()
-                websocket_uri = f"ws://127.0.0.1:8001/ws/sendnotification/{license_no}/"
+                websocket_uri = f"wss://logimasterssilicon.onrender.com/ws/sendnotification/{registration_no}/"
                 print("hii")
                 loop = asyncio.new_event_loop()
                 asyncio.set_event_loop(loop)
