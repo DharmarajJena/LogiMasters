@@ -5,7 +5,7 @@ from django.db import models
 class Notifications(models.Model):
 
     message=models.CharField(max_length=100)
-    license_no=models.CharField(max_length=20)
+    registration_no=models.CharField(max_length=20)
     seen=models.BooleanField(default=False)
 
 
