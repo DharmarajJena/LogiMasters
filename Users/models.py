@@ -14,6 +14,6 @@ class Fleets(models.Model):
     token_no=models.CharField(max_length=100,blank=True)
 
     def __str__(self):
-        return self.license_no
+        return self.registration_no
     class Meta:
         verbose_name_plural="Fleet"
