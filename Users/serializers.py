@@ -34,9 +34,9 @@ class RegisterFleetSerializer(serializers.ModelSerializer):
         fields='__all__'
 
     def validate(self, data):
-        if data['license_no']:
-            if Fleets.objects.filter(license_no=data['license_no']).exists():
-                raise serializers.ValidationError('license no already exists.')
+        if data['registration_no']:
+            if Fleets.objects.filter(registration_no=data['registration_no']).exists():
+                raise serializers.ValidationError('registration no already exists.')
         if data['hardware_id']:
             if Fleets.objects.filter(hardware_id=data['hardware_id']).exists():
                 raise serializers.ValidationError('hardware_id already exists.')
