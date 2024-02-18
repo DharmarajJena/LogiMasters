@@ -10,3 +10,4 @@ websockets
 psycopg==3.1.18
 psycopg2==2.9.9
 dj-database-url
+firebase-admin

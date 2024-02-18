@@ -170,3 +170,11 @@ CHANNEL_LAYERS = {
 TWILIO_ACCOUNT_SID = 'AC85e2d8698a5e8d51bb77316ea445648e'
 TWILIO_AUTH_TOKEN = 'a58dcf4629f2bcfda3fcf2e89dfe845d'
 TWILIO_PHONE_NUMBER = '+16593335075'  # Should be in the format '+1234567890'
+
+
+# import firebase_admin
+# from firebase_admin import credentials
+
+# cred = credentials.Certificate("path/to/serviceAccountKey.json")
+# firebase_admin.initialize_app(cred)
+

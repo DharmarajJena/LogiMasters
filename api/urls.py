@@ -1,5 +1,6 @@
 from Users.views import FleetManagerRegistration,FleetManagerLogin,FleetRegistration
 from fleet.views import GetAllFleets,SendNotifications,GetAllNotifications
+# ,SaveDrowsyDetails
 from django.urls import path,include
 from rest_framework.routers import DefaultRouter
 
@@ -15,7 +16,9 @@ router.register(r'fleetregistration',FleetRegistration,basename='fleetregistrati
 router.register(r'getallfleets',GetAllFleets,basename='getallfleets')
 router.register(r'sendnotification',SendNotifications,basename='sendnotification')
 router.register(r'getallnotifications',GetAllNotifications,basename='getallnotifications')
+# router.register(r'savedrowsydetails',SaveDrowsyDetails,basename='savedrowsydetails')
 
+##migrate before deploying
 
 urlpatterns =router.urls
 

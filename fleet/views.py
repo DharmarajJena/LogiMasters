@@ -3,7 +3,9 @@ from rest_framework import viewsets,status
 from rest_framework.response import Response
 from Users.models import Fleets
 from .models import Notifications
+# ,DrowsyDetails,Device
 from .serializers import GetAllFleetSerializer,SendNotificationSerializer
+# ,SaveDrowsyDetailsSerializer
 import websockets,json, asyncio
 
 class GetAllFleets(viewsets.ModelViewSet):
@@ -68,3 +70,29 @@ class GetAllNotifications(viewsets.ModelViewSet):
         serialized_data=self.serializer_class(self.queryset,many=True).data
         print(serialized_data)
         return Response(serialized_data)
+    
+# from firebase_admin import messaging
+
+# def send_push_notification(token, title, body):
+#     message = messaging.Message(
+#         notification=messaging.Notification(title=title, body=body),
+#         token=token,
+#     )
+#     response = messaging.send(message)
+#     print('Successfully sent message:', response)
+
+# class SaveDrowsyDetails(viewsets.ModelViewSet):
+#     queryset=DrowsyDetails.objects.all()
+#     serializer_class=SaveDrowsyDetailsSerializer
+
+#     def create(self, request, *args, **kwargs):
+#         data=request.data 
+#         data['fleet']=Fleets.objects.get(hardware_id=data['fleet']).id
+#         serializer=self.serializer_class(data=data)
+#         if serializer.is_valid():
+#             serializer.save()
+#             firebase_token=Device.objects.get(user=request.user).firebase_token
+#             send_push_notification(firebase_token,"Alert","Drowsy Detected!")
+
+#             return Response({"Message":"Got the drowsy details"})
+#         return Response({"Message":"Invalid drowsy details"})
