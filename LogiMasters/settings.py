@@ -64,6 +64,30 @@ CORS_ALLOWED_ORIGINS = [
 CORS_ALLOW_CREDENTIALS = True
 CORS_ALLOW_ALL_ORIGIN= True
 
+
+CORS_ORIGIN_WHITELIST = [
+    'http://logimasterssilicon.onrender.com',
+]
+
+CORS_ALLOW_METHODS = [
+    'GET',
+    'POST',
+    'PUT',
+    'PATCH',
+    'DELETE',
+    'OPTIONS'
+]
+
+CORS_ALLOW_HEADERS = [
+    'Accept',
+    'Accept-Encoding',
+    'Authorization',
+    'Content-Type',
+    'Origin',
+    'Referer',
+    'User-Agent',
+]
+
 ROOT_URLCONF = 'LogiMasters.urls'
 
 TEMPLATES = [
