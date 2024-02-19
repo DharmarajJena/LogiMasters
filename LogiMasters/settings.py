@@ -31,6 +31,7 @@ ALLOWED_HOSTS = ['logimasterssilicon.onrender.com','*']
 
 INSTALLED_APPS = [
     # 'django.contrib.gis',
+    'corsheaders',
     'rest_framework',
     'rest_framework.authtoken',
     'channels',
@@ -45,6 +46,7 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -53,6 +55,14 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
+CORS_ALLOWED_ORIGINS = [
+    "http://logimasterssilicon.onrender.com",
+    # Add more allowed origins as needed
+]
+
+CORS_ALLOW_CREDENTIALS = True
+CORS_ALLOW_ALL_ORIGIN= True
 
 ROOT_URLCONF = 'LogiMasters.urls'
 
