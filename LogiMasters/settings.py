@@ -58,6 +58,7 @@ MIDDLEWARE = [
 
 CORS_ALLOWED_ORIGINS = [
     "http://logimasterssilicon.onrender.com",
+    "https://logimasterssilicon.onrender.com",
     # Add more allowed origins as needed
 ]
 
@@ -67,6 +68,7 @@ CORS_ALLOW_ALL_ORIGIN= True
 
 CORS_ORIGIN_WHITELIST = [
     'http://logimasterssilicon.onrender.com',
+    "https://logimasterssilicon.onrender.com",
 ]
 
 CORS_ALLOW_METHODS = [
