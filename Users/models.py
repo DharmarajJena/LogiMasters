@@ -9,7 +9,7 @@ class Fleets(models.Model):
     companyName = models.ForeignKey(FleetManagers, on_delete=models.CASCADE)
     hardware_id = models.CharField(max_length=100, unique=True)
     registration_no = models.CharField(max_length=20, unique=True)
-    password = models.CharField(max_length=255)
+    # password = models.CharField(max_length=255)
     mobile_no = models.CharField(max_length=10,null=True)
     token_no=models.CharField(max_length=100,blank=True)
 
